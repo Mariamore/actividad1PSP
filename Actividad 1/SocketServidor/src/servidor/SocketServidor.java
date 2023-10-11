@@ -31,6 +31,10 @@ public class SocketServidor {
 			while(true) {
 				//Por cada petición crearemos un objeto socket distinto
 				Socket socketAlCliente = servidor.accept();
+				System.out.println("Servidor: peticion número " + ++peticion + " recibida.");
+				
+				//Abrimos un hilo nuevo para liberar el servidor y que pueda aceptar otras peticiones
+				new HiloPelicula(socketAlCliente);
 			}
 			
 		} catch (IOException e) {

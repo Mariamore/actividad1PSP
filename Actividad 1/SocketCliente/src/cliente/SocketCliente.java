@@ -44,10 +44,62 @@ public class SocketCliente {
 			
 			do {
 				int opcion = menu();
+				//salida.print(opcion);
+				//System.out.println("Cliente: esperando respuesta...");
 				
-				//enviamos la opción elegida al servidor
-				salida.println(opcion);
-				System.out.println("Cliente: esperando respuesta...");
+				switch (opcion) {
+				case 1:
+					System.out.println("Introduce el ID de la película:");
+					String id = sc.nextLine();
+					//Establecemos que la forma de pasar la información es opcion-información
+					String info = String.valueOf(opcion) + "-" + id;
+					System.out.println(info);
+					//enviamos la opción elegida al servidor
+					salida.println(info);
+					System.out.println("Cliente: esperando respuesta...");
+					String respuesta = entradaBuffer.readLine();
+					System.out.println("Cliente: el servidor responde: " + respuesta);
+					break;
+				case 2:
+					System.out.println("Introduce el título de la película: ");
+					String titulo = sc.nextLine();
+					String info1 = String.valueOf(opcion) + "-" + titulo;
+					salida.println(info1);
+					System.out.println("Cliente: esperando respuesta...");
+					String respuesta1 = entradaBuffer.readLine();
+					System.out.println("Cliente: el servidor responde: " + respuesta1);
+					break;
+					
+				case 3:
+					System.out.println("Introduce el director para consultar su filmografía disponible:");
+					String director = sc.nextLine();
+					String info2 = String.valueOf(opcion) + "-" + director;
+					salida.println(info2);
+					System.out.println("Cliente: esperando respuesta...");
+					String respuesta2 = entradaBuffer.readLine();
+					System.out.println("Cliente: el servidor responde: " + respuesta2);
+				case 4:
+//					System.out.println("Introduce el id de la película a añadir:");
+//					String iDPeli = sc.nextLine();
+					System.out.println("Introduce el título de la película a añadir:");
+					String tituloPeli = sc.nextLine();
+					System.out.println("Introduce el director a la película a añadir:");
+					String directorPeli = sc.nextLine();
+					System.out.println("Introduce el precio de la película a añadir:");
+					String precioPeli = sc.nextLine();
+					String info3 = String.valueOf(opcion) + "-" + tituloPeli + "-" + directorPeli + "-" + precioPeli;
+					salida.println(info3);
+					System.out.println("Cliente: esperando respuesta...");
+					String respuesta3 = entradaBuffer.readLine();
+					System.out.println("Cliente: el servidor responde: " + respuesta3);
+					break;
+					
+					
+				case 5:
+					
+				default:
+				}
+
 				
 			} while (continuar);
 		} catch (IOException e) {
@@ -60,6 +112,7 @@ public class SocketCliente {
 	public static int menu() {
 		Scanner sc = new Scanner(System.in);
 		int opcion = 0;
+		
 		 System.out.println(" ------ MENÚ ------- ");
 		 System.out.println("1. Consultar película por ID");
 		 System.out.println("2. Consultar película por título");
@@ -70,6 +123,7 @@ public class SocketCliente {
 		 while(opcion > 5 || opcion < 1) {
 			 System.out.println("Introduce el número de la opción elegida:");
 			 opcion = sc.nextInt();
+			 
 		 }
 		 return opcion;
 		
