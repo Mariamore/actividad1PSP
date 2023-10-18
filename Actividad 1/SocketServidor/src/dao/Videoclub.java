@@ -48,6 +48,12 @@ public class Videoclub implements IntGestionPeliculas{
 
 	@Override
 	public synchronized boolean alta(Pelicula pelicula) {
+		try {
+			Thread.sleep(7000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if(peliculas.contains(pelicula)) {
 			return false;
 		} else {

@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.UnknownHostException;
 import java.util.Scanner;
 
 public class SocketCliente {
@@ -96,16 +97,31 @@ public class SocketCliente {
 					
 					
 				case 5:
-					
+					String info4 = String.valueOf(opcion);
+					salida.println(info4);
+					String respuesta4 = entradaBuffer.readLine();
+					if("FIN".equalsIgnoreCase(respuesta4)) 
+						continuar = false;
 				default:
 				}
 
 				
 			} while (continuar);
+			socketAlServidor.close();
+			
+		} catch (UnknownHostException e) {
+			System.err.println("CLIENTE: No encuentro el servidor en la dirección" + IP_SERVER);
+			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.err.println("CLIENTE: Error de entrada/salida");
+			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println("CLIENTE: Error -> " + e);
 			e.printStackTrace();
 		}
+		
+
+		System.out.println("CLIENTE: Fin del programa");
 
 	}
 	

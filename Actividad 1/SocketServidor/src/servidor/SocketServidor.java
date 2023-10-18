@@ -38,7 +38,10 @@ public class SocketServidor {
 			}
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+			System.err.println("SERVIDOR: Error de entrada o salida");
+			e.printStackTrace();
+		} catch (Exception e) {
+			System.err.println("SERVIDOR: Error");
 			e.printStackTrace();
 		}
 		

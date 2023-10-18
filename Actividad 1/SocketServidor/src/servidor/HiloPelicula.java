@@ -13,7 +13,7 @@ public class HiloPelicula implements Runnable{
 	
 	private Thread hilo;
 	private Socket socketAlCliente;
-	private int numCliente = 0;
+	private static int numCliente = 0;
 	
 
 	public HiloPelicula (Socket socketAlCliente) {
@@ -54,19 +54,28 @@ public class HiloPelicula implements Runnable{
 					String iDString = partes[1];
 					int iD = Integer.parseInt(iDString);
 					System.out.println(hilo.getName() + " ha mandado la id " + iD + " y corresponde a la película " + peliculas.peliculaPorID(iD));
-					salida.println(peliculas.peliculaPorID(iD));
+					if (peliculas.peliculaPorID(iD) == null) 
+						salida.println("No existe una película con ID " + iD);
+					else
+						salida.println(peliculas.peliculaPorID(iD));
 					break;
 					
 				case "2":
 					String titulo = partes[1];
 					System.out.println(hilo.getName() + " ha mandado el título " + titulo + " y corresponde a la película " + peliculas.peliculaPorTitulo(titulo));
-					salida.println(peliculas.peliculaPorTitulo(titulo));
+					if (peliculas.peliculaPorTitulo(titulo).size() == 0)
+						salida.println("No existen películas con el título " + titulo);
+					else
+						salida.println(peliculas.peliculaPorTitulo(titulo));
 					break;
 					
 				case "3":
 					String director = partes[1];
 					System.out.println(hilo.getName() + " ha mandado el director " + director + " y corresponde a la película " + peliculas.peliculaPorDirector(director));
-					salida.println(peliculas.peliculaPorDirector(director));
+					if (peliculas.peliculaPorDirector(director).size() == 0)
+						salida.println("No existen películas del director " + director);
+					else
+						salida.println(peliculas.peliculaPorDirector(director));
 					break;
 					
 				case "4":
@@ -82,8 +91,14 @@ public class HiloPelicula implements Runnable{
 					break;
 					
 				case "5":
+					//Mandamos la señal para que el cliente sepa que vamos a cortar la comunicación
+					salida.println("FIN");
+					System.out.println(hilo.getName() + " ha cerrado la comunicación");
+					continuar = false;
+					break;
 					
 				default:
+					salida.println("Error");
 				}
 //				if (info.charAt(0) == '1') {
 //					System.out.println("Ha llegado algo");
