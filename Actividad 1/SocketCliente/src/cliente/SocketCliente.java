@@ -78,6 +78,7 @@ public class SocketCliente {
 					System.out.println("Cliente: esperando respuesta...");
 					String respuesta2 = entradaBuffer.readLine();
 					System.out.println("Cliente: el servidor responde: " + respuesta2);
+					break;
 				case 4:
 					System.out.println("Introduce el título de la película a añadir:");
 					String tituloPeli = sc.nextLine();

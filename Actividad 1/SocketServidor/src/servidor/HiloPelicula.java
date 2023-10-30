@@ -84,7 +84,7 @@ public class HiloPelicula implements Runnable{
 					peli.setTitulo(partes[1]);
 					peli.setDirector(partes[2]);
 					peli.setPrecio(Double.parseDouble(partes[3]));
-					System.out.println(hilo.getName() + " ha mandado la película" + peli);
+					System.out.println(hilo.getName() + " ha mandado la película " + peli);
 					Thread.sleep(10000);
 					peliculas.alta(peli);
 					salida.println(peliculas.todasLasPeliculas());
