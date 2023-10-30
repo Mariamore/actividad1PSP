@@ -15,10 +15,10 @@ public class PeliculasDaoImpl implements PeliculasDao {
     private void cargarDatos() {
         peliculas.add(new Peliculas("A001", "Lo que el viento se llevó", "VictorFleming", 12.99));
         peliculas.add(new Peliculas("A002", "Los vengadores, la era de Ultron", "Joss Whedon", 15.99));
-        peliculas.add(new Peliculas("A003", "Harry Potter y el prisionero de Azkaban", "AlfonsoCuaron", 17.99));
-        peliculas.add(new Peliculas("A004", "El señor de los anillos, las dos torres", "PeterJackson", 19.99));
+        peliculas.add(new Peliculas("A003", "Harry Potter y el prisionero de Azkaban", "Alfonso Cuaron", 17.99));
+        peliculas.add(new Peliculas("A004", "El señor de los anillos, las dos torres", "Peter Jackson", 19.99));
         peliculas.add(new Peliculas("A005", "Iron Man 3", "Shane Black", 12.99));
-        peliculas.add(new Peliculas("A006", "Roma", "AlfonsoCuaron", 15.99));
+        peliculas.add(new Peliculas("A006", "Roma", "Alfonso Cuaron", 15.99));
     }
 
     public Peliculas consultarPelicula(String id) {

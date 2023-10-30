@@ -61,7 +61,7 @@ public class SocketCliente {
         try {
             
             System.out.print("Dame el ID de la película: ");
-            String id = entradaCliente.next();
+            String id = entradaCliente.nextLine();
             PrintStream salida = new PrintStream(socketCliente.getOutputStream());
             salida.println("1-" + id);
 
@@ -77,7 +77,7 @@ public class SocketCliente {
         try {
             
             System.out.print("Dame el título de la película: ");
-            String titulo = entradaCliente.next().trim();//eliminamos espacios en blanco
+            String titulo = entradaCliente.nextLine();//eliminamos espacios en blanco
             PrintStream salida = new PrintStream(socketCliente.getOutputStream());
             salida.println("2-" + titulo);
 
@@ -93,7 +93,7 @@ public class SocketCliente {
         try {
             
             System.out.print("Dame el nombre del director: ");
-            String director = entradaCliente.next().trim();
+            String director = entradaCliente.nextLine();
             PrintStream salida = new PrintStream(socketCliente.getOutputStream());
             salida.println("3-" + director);
 
@@ -113,9 +113,9 @@ public class SocketCliente {
             System.out.print("Dame el ID de la película: ");
             String id = entradaCliente.next();
             System.out.print("Dame el título de la película: ");
-            String titulo = entradaCliente.next().trim();
+            String titulo = entradaCliente.nextLine();
             System.out.print("Dame el director de la película: ");
-            String director = entradaCliente.next().trim();
+            String director = entradaCliente.nextLine();
             System.out.print("Dame el precio de la película: ");
             double precio = entradaCliente.nextDouble();
             salida.println("4-" + id + "-" + titulo + "-" + director + "-" + precio);
