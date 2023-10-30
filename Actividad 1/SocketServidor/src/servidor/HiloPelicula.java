@@ -100,15 +100,7 @@ public class HiloPelicula implements Runnable{
 				default:
 					salida.println("Error");
 				}
-//				if (info.charAt(0) == '1') {
-//					System.out.println("Ha llegado algo");
-//					String iDString = info.substring(2);
-//					int iD = Integer.parseInt(iDString);
-//					System.out.println(hilo.getName() + " ha mandado la id " + iD + "y corresponde a la película " + peliculas.peliculaPorID(iD));
-//					
-//					salida.println(peliculas.peliculaPorID(iD));
-//					break;
-//				}
+
 				}
 				
 			
