@@ -73,10 +73,10 @@ public class Videoclub implements IntGestionPeliculas{
 	
 	private void cargarDatos() {
 		peliculas.add(new Pelicula(1, "Titanic", "James Cameron" , 4.99));
-		peliculas.add(new Pelicula(1, "Titanic", "James Cameron" , 4.99));
-		peliculas.add(new Pelicula(1, "Titanic", "James Cameron" , 4.99));
-		peliculas.add(new Pelicula(1, "Titanic", "James Cameron" , 4.99));
-		peliculas.add(new Pelicula(1200, "Titanic", "James Cameron" , 4.99));
+		peliculas.add(new Pelicula(2, "Venom", "Ruben Fleischer" , 5.99));
+		peliculas.add(new Pelicula(3, "La Ballena", "Daren Arnofsky" , 7.80));
+		peliculas.add(new Pelicula(4, "As Bestas", "Rodrigo Sorogoyen" , 6.95));
+		peliculas.add(new Pelicula(5, "Babylon", "Damien Chazelle" , 11.50));
 	}
 
 	@Override

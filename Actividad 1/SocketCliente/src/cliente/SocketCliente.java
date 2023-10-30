@@ -45,8 +45,7 @@ public class SocketCliente {
 			
 			do {
 				int opcion = menu();
-				//salida.print(opcion);
-				//System.out.println("Cliente: esperando respuesta...");
+				
 				
 				switch (opcion) {
 				case 1:
@@ -80,8 +79,6 @@ public class SocketCliente {
 					String respuesta2 = entradaBuffer.readLine();
 					System.out.println("Cliente: el servidor responde: " + respuesta2);
 				case 4:
-//					System.out.println("Introduce el id de la película a añadir:");
-//					String iDPeli = sc.nextLine();
 					System.out.println("Introduce el título de la película a añadir:");
 					String tituloPeli = sc.nextLine();
 					System.out.println("Introduce el director a la película a añadir:");
@@ -94,8 +91,6 @@ public class SocketCliente {
 					String respuesta3 = entradaBuffer.readLine();
 					System.out.println("Cliente: el servidor responde: " + respuesta3);
 					break;
-					
-					
 				case 5:
 					String info4 = String.valueOf(opcion);
 					salida.println(info4);
